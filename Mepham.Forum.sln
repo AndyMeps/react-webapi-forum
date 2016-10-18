@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Dtos", "Mepham
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DAL.Test", "Mepham.Forum.DAL.Test\Mepham.Forum.DAL.Test.csproj", "{5034C654-48D4-4F2D-B859-5067014EF209}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Api", "Mepham.Forum.Api\Mepham.Forum.Api.csproj", "{67B0334F-1F36-4325-BCAD-A24D092AA9A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Api.Tests", "Mepham.Forum.Api.Tests\Mepham.Forum.Api.Tests.csproj", "{AA41B713-6E6F-4C56-9F94-6833C9791C89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{5034C654-48D4-4F2D-B859-5067014EF209}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5034C654-48D4-4F2D-B859-5067014EF209}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5034C654-48D4-4F2D-B859-5067014EF209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
