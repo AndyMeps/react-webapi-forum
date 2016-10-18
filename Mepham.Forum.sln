@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Models", "Meph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DAL", "Mepham.Forum.Services\Mepham.Forum.DAL.csproj", "{707D89E3-88CC-48EF-A3FF-75788CBEB758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Cli", "Mepham.Forum.Cli\Mepham.Forum.Cli.csproj", "{EBC8FBAE-ECFB-4B81-B592-38BB19070718}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Dtos", "Mepham.Forum.Dtos\Mepham.Forum.Dtos.csproj", "{7022D083-52FC-45A2-A2E4-13D28BB65FA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DAL.Test", "Mepham.Forum.DAL.Test\Mepham.Forum.DAL.Test.csproj", "{5034C654-48D4-4F2D-B859-5067014EF209}"
@@ -27,10 +25,6 @@ Global
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBC8FBAE-ECFB-4B81-B592-38BB19070718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBC8FBAE-ECFB-4B81-B592-38BB19070718}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBC8FBAE-ECFB-4B81-B592-38BB19070718}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBC8FBAE-ECFB-4B81-B592-38BB19070718}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7022D083-52FC-45A2-A2E4-13D28BB65FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7022D083-52FC-45A2-A2E4-13D28BB65FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7022D083-52FC-45A2-A2E4-13D28BB65FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
