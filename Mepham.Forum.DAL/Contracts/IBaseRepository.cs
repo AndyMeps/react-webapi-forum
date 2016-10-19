@@ -19,7 +19,7 @@ namespace Mepham.Forum.DAL.Contracts
         Task<TObject> AddAsync(TObject t);
         TObject Update(TObject updated, Guid key);
         Task<TObject> UpdateAsync(TObject updated, Guid key);
-        void Delete(TObject t);
+        int Delete(TObject t);
         Task<int> DeleteAsync(TObject t);
         int Count();
         Task<int> CountAsync();

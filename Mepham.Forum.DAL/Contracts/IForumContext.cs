@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading.Tasks;
-using Mepham.Forum.Models;
+using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.DAL.Contracts
 {

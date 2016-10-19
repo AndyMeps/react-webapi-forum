@@ -71,13 +71,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Mepham.Forum.DAL\Mepham.Forum.DAL.csproj">
+      <Project>{707D89E3-88CC-48EF-A3FF-75788CBEB758}</Project>
+      <Name>Mepham.Forum.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mepham.Forum.Models\Mepham.Forum.Models.csproj">
       <Project>{978a2700-86e3-447d-8969-12c0d4f51d79}</Project>
       <Name>Mepham.Forum.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mepham.Forum.Services\Mepham.Forum.DAL.csproj">
-      <Project>{707d89e3-88cc-48ef-a3ff-75788cbeb758}</Project>
-      <Name>Mepham.Forum.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

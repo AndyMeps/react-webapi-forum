@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mepham.Forum.Dtos.User
+namespace Mepham.Forum.Models.Dtos.User
 {
     public class BasicUserDto
     {

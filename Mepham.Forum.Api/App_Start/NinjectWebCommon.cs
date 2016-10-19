@@ -67,6 +67,8 @@ namespace Mepham.Forum.Api.App_Start
         {
             kernel.Bind<IForumContext>().To<ForumContext>();
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ITopicRepository>().To<TopicRepository>();
+            kernel.Bind<IThreadRepository>().To<ThreadRepository>();
         }        
     }
 }

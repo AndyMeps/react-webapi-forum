@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Mepham.Forum.Dtos.User;
-using Mepham.Forum.Models;
+﻿using Mepham.Forum.Models.Dtos.Topic;
+using Mepham.Forum.Models.Dtos.User;
+using Mepham.Forum.Models.Entities;
 
-namespace Mepham.Forum.Api.App_Start
+namespace Mepham.Forum.Api
 {
     public static class MapConfig
     {
@@ -15,6 +12,7 @@ namespace Mepham.Forum.Api.App_Start
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<User, BasicUserDto>();
+                cfg.CreateMap<Topic, BasicTopicDto>();
             });
         }
     }

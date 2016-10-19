@@ -1,4 +1,4 @@
-﻿using Mepham.Forum.Models;
+﻿using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.DAL.Contracts
 {

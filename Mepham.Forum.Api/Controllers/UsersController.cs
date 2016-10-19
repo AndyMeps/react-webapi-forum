@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using AutoMapper;
 using Mepham.Forum.DAL.Contracts;
-using Mepham.Forum.Dtos.User;
-using Mepham.Forum.Models;
+using Mepham.Forum.Models.Dtos.User;
+using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.Api.Controllers
 {

@@ -8,6 +8,10 @@ using Mepham.Forum.DAL.Contracts;
 
 namespace Mepham.Forum.DAL.Repositories
 {
+    /// <summary>
+    /// Boilerplate repository that handles the majority of the needs of every Entity repository.
+    /// </summary>
+    /// <typeparam name="TObject">POCO from Mepham.Forum.Models</typeparam>
     public class BaseRepository<TObject> where TObject : class
     {
         protected IForumContext Context;
@@ -100,11 +104,10 @@ namespace Mepham.Forum.DAL.Repositories
             return existing;
         }
 
-        public void Delete(TObject t)
+        public int Delete(TObject t)
         {
-            // TODO: Soft Delete
             Context.Set<TObject>().Remove(t);
-            Context.SaveChanges();
+            return Context.SaveChanges();
         }
 
         public async Task<int> DeleteAsync(TObject t)

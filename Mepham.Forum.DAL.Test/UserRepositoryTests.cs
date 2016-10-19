@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Mepham.Forum.DAL.Repositories;
-using Mepham.Forum.Models;
+using Mepham.Forum.Models.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -13,7 +13,7 @@ namespace Mepham.Forum.DAL.Test
     public class UserRepositoryTests
     {
         [TestMethod]
-        public void FindById_ExistingUser_ShouldReturnUser()
+        public void Get_ExistingUser_ShouldReturnUser()
         {
             // Arrange
             Guid expectedId = Guid.NewGuid();
@@ -31,7 +31,7 @@ namespace Mepham.Forum.DAL.Test
             var classUnderTest = new UserRepository(customDbContextMock.Object);
 
             // Action
-            var actual = classUnderTest.FindById(expectedId);
+            var actual = classUnderTest.Get(expectedId);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -57,7 +57,7 @@ namespace Mepham.Forum.DAL.Test
             var classUnderTest = new UserRepository(customDbContextMock.Object);
 
             // Action
-            var actual = classUnderTest.FindById(randomGuid);
+            var actual = classUnderTest.Get(randomGuid);
 
             // Assert
             Assert.IsNull(actual);
@@ -74,7 +74,7 @@ namespace Mepham.Forum.DAL.Test
             var classUnderTest = new UserRepository(customDbContextMock.Object);
 
             // Action
-            var actual = classUnderTest.GetUsers();
+            var actual = classUnderTest.GetAll();
 
             // Assert
             Assert.IsNotNull(actual);
@@ -99,7 +99,7 @@ namespace Mepham.Forum.DAL.Test
             var classUnderTest = new UserRepository(customDbContextMock.Object);
 
             // Action
-            var actual = classUnderTest.GetUsers();
+            var actual = classUnderTest.GetAll();
 
             // Assert
             Assert.IsNotNull(actual);
@@ -115,9 +115,7 @@ namespace Mepham.Forum.DAL.Test
             var customDbContextMock = GetDbContext(data);
             var classUnderTest = new UserRepository(customDbContextMock.Object);
 
-            classUnderTest.Insert(null);
-            classUnderTest.Save();
-
+            classUnderTest.Add(null);
             // Assert
             // noop
         }
@@ -139,9 +137,9 @@ namespace Mepham.Forum.DAL.Test
             };
 
             // Action
-            classUnderTest.Insert(user);
-            classUnderTest.Save();
-            var actual = classUnderTest.FindById(newId);
+            classUnderTest.Add(user);
+
+            var actual = classUnderTest.Get(newId);
 
             // Assert
             Assert.IsNotNull(actual);
@@ -149,7 +147,7 @@ namespace Mepham.Forum.DAL.Test
 
         private Mock<ForumContext> GetDbContext(List<User> userData)
         {
-            var dbSetMock = new Mock<IDbSet<User>>();
+            var dbSetMock = new Mock<DbSet<User>>();
 
             dbSetMock.As<IQueryable<User>>().Setup(m => m.Provider).Returns(userData.AsQueryable().Provider);
             dbSetMock.As<IQueryable<User>>().Setup(m => m.Expression).Returns(userData.AsQueryable().Expression);

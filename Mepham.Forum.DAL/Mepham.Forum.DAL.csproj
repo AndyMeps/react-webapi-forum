@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IBaseRepository.cs" />
+    <Compile Include="Contracts\ITopicRepository.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
     <Compile Include="ForumContext.cs" />
     <Compile Include="Contracts\IForumContext.cs" />
@@ -57,10 +58,27 @@
     <Compile Include="Migrations\201610181548500_InitialCreate.Designer.cs">
       <DependentUpon>201610181548500_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610191324356_TestingDefaultValueAttribute.cs" />
+    <Compile Include="Migrations\201610191324356_TestingDefaultValueAttribute.Designer.cs">
+      <DependentUpon>201610191324356_TestingDefaultValueAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610191530351_TopicBasicImplementation.cs" />
+    <Compile Include="Migrations\201610191530351_TopicBasicImplementation.Designer.cs">
+      <DependentUpon>201610191530351_TopicBasicImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610191602527_ThreadBasicImplementation.cs" />
+    <Compile Include="Migrations\201610191602527_ThreadBasicImplementation.Designer.cs">
+      <DependentUpon>201610191602527_ThreadBasicImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610191622020_CommentBasicImplementation.cs" />
+    <Compile Include="Migrations\201610191622020_CommentBasicImplementation.Designer.cs">
+      <DependentUpon>201610191622020_CommentBasicImplementation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\DefaultValueSqlServerMigrationSqlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\TopicRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,10 +99,20 @@
     <EmbeddedResource Include="Migrations\201610181548500_InitialCreate.resx">
       <DependentUpon>201610181548500_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191324356_TestingDefaultValueAttribute.resx">
+      <DependentUpon>201610191324356_TestingDefaultValueAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191530351_TopicBasicImplementation.resx">
+      <DependentUpon>201610191530351_TopicBasicImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191602527_ThreadBasicImplementation.resx">
+      <DependentUpon>201610191602527_ThreadBasicImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610191622020_CommentBasicImplementation.resx">
+      <DependentUpon>201610191622020_CommentBasicImplementation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
