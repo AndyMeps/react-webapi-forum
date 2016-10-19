@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
 using AutoMapper;
+using Mepham.Forum.DAL.Contracts;
 using Mepham.Forum.Dtos.User;
 using Mepham.Forum.Models;
-using Mepham.Forum.Services.Contracts;
 
 namespace Mepham.Forum.Api.Controllers
 {
@@ -17,14 +18,15 @@ namespace Mepham.Forum.Api.Controllers
             _userRepository = userRepository;
         }
 
-        public IEnumerable<BasicUserDto> GetAllUsers()
+        public async Task<ICollection<BasicUserDto>> GetAllUsers()
         {
-            return Mapper.Map<IEnumerable<User>, IEnumerable<BasicUserDto>>(_userRepository.GetUsers());
+            var result = await _userRepository.GetAllAsync();
+            return Mapper.Map<ICollection<User>, ICollection<BasicUserDto>>(result);
         }
 
-        public BasicUserDto GetUser(string id)
+        public async Task<BasicUserDto> GetUser(string id)
         {
-            var user = _userRepository.FindById(new Guid(id));
+            var user = await _userRepository.GetAsync(new Guid(id));
 
             return Mapper.Map<BasicUserDto>(user);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Mepham.Forum.Models
@@ -6,6 +7,7 @@ namespace Mepham.Forum.Models
     public class User
     {
         [Key]
+        [DefaultValue("NEWID()")]
         public Guid Id { get; set; }
 
         [Required]
@@ -14,8 +16,9 @@ namespace Mepham.Forum.Models
         [Required]
         public string Password { get; set; }
 
-        // [Required]
-        // public DateTime CreateDateTime { get; set; }
+        [Required]
+        [DefaultValue("GETDATE()")]
+        public DateTime CreateDateTime { get; set; }
 
         public DateTime? UpdateDateTime { get; set; }
         public DateTime? DeleteDateTime { get; set; }

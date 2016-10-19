@@ -1,6 +1,6 @@
 using Mepham.Forum.DAL;
+using Mepham.Forum.DAL.Contracts;
 using Mepham.Forum.DAL.Repositories;
-using Mepham.Forum.Services.Contracts;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Mepham.Forum.Api.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Mepham.Forum.Api.App_Start.NinjectWebCommon), "Stop")]
