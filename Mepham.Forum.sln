@@ -5,13 +5,13 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Models", "Mepham.Forum.Models\Mepham.Forum.Models.csproj", "{978A2700-86E3-447D-8969-12C0D4F51D79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DAL.Test", "Mepham.Forum.DAL.Test\Mepham.Forum.DAL.Test.csproj", "{5034C654-48D4-4F2D-B859-5067014EF209}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Api", "Mepham.Forum.Api\Mepham.Forum.Api.csproj", "{67B0334F-1F36-4325-BCAD-A24D092AA9A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Api.Tests", "Mepham.Forum.Api.Tests\Mepham.Forum.Api.Tests.csproj", "{AA41B713-6E6F-4C56-9F94-6833C9791C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DAL", "Mepham.Forum.DAL\Mepham.Forum.DAL.csproj", "{707D89E3-88CC-48EF-A3FF-75788CBEB758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Services", "Mepham.Forum.Services\Mepham.Forum.Services.csproj", "{64159282-B544-4F52-BD46-BDE6647288AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DataAccess", "Mepham.Forum.DataAccess\Mepham.Forum.DataAccess.csproj", "{707D89E3-88CC-48EF-A3FF-75788CBEB758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{978A2700-86E3-447D-8969-12C0D4F51D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{978A2700-86E3-447D-8969-12C0D4F51D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{978A2700-86E3-447D-8969-12C0D4F51D79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5034C654-48D4-4F2D-B859-5067014EF209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5034C654-48D4-4F2D-B859-5067014EF209}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5034C654-48D4-4F2D-B859-5067014EF209}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5034C654-48D4-4F2D-B859-5067014EF209}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67B0334F-1F36-4325-BCAD-A24D092AA9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA41B713-6E6F-4C56-9F94-6833C9791C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64159282-B544-4F52-BD46-BDE6647288AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64159282-B544-4F52-BD46-BDE6647288AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64159282-B544-4F52-BD46-BDE6647288AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64159282-B544-4F52-BD46-BDE6647288AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Release|Any CPU.ActiveCfg = Release|Any CPU

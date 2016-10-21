@@ -1,21 +1,33 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Mepham.Forum.DAL.Contracts;
 using Mepham.Forum.Models.Dtos.User;
 using Mepham.Forum.Models.Entities;
+using Mepham.Forum.Services.Contracts;
 
 namespace Mepham.Forum.Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AccountController : ApiController
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userRepository;
 
-        public AccountController(IUserRepository userRepository)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userRepository"></param>
+        public AccountController(IUserService userRepository)
         {
             _userRepository = userRepository;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns></returns>
         public async Task<IHttpActionResult> Register(CreateUserDto userModel)
         {
             if (!ModelState.IsValid)

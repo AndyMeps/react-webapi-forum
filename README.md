@@ -24,3 +24,6 @@ Demo site to combine React with ASP.NET Web Api
 * React front end with Webpack, state maintained with Redux.
 * ASP.NET Web Api, IoC, Services, Models, Testing
 * SQL Database
+
+https://auth0.com/blog/secure-your-react-and-redux-app-with-jwt-authentication/
+http://benfoster.io/blog/aspnet-identity-stripped-bare-mvc-part-1

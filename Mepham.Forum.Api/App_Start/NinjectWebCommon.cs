@@ -1,6 +1,7 @@
-using Mepham.Forum.DAL;
-using Mepham.Forum.DAL.Contracts;
-using Mepham.Forum.DAL.Repositories;
+using Mepham.Forum.DataAccess;
+using Mepham.Forum.DataAccess.Contracts;
+using Mepham.Forum.Services.Contracts;
+using Mepham.Forum.Services.Implementations;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Mepham.Forum.Api.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Mepham.Forum.Api.App_Start.NinjectWebCommon), "Stop")]
@@ -66,9 +67,9 @@ namespace Mepham.Forum.Api.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IForumContext>().To<ForumContext>();
-            kernel.Bind<IUserRepository>().To<UserRepository>();
-            kernel.Bind<ITopicRepository>().To<TopicRepository>();
-            kernel.Bind<IThreadRepository>().To<ThreadRepository>();
+            kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ITopicService>().To<TopicService>();
+            kernel.Bind<IThreadService>().To<ThreadService>();
         }        
     }
 }
