@@ -69,7 +69,8 @@ namespace Mepham.Forum.Api.App_Start
             kernel.Bind<IForumContext>().To<ForumContext>();
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<ITopicService>().To<TopicService>();
-            kernel.Bind<IThreadService>().To<ThreadService>();
+            kernel.Bind<IPostService>().To<PostService>();
+            kernel.Bind<ICommentService>().To<CommentService>();
         }        
     }
 }

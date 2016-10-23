@@ -21,7 +21,7 @@ namespace Mepham.Forum.Models.Entities
         [ForeignKey("ModeratingUserId")]
         public virtual User ModeratingUser { get; set; }
 
-        public virtual ICollection<Thread> Threads { get; set; }
+        public virtual ICollection<Post> Threads { get; set; }
 
         #endregion
     }

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mepham.Forum.Models.Entities
 {
-    public class Thread : BaseEntity
+    public class Post : BaseEntity
     {
         [Required]
         public string Title { get; set; }

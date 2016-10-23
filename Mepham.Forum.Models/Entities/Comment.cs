@@ -23,7 +23,7 @@ namespace Mepham.Forum.Models.Entities
         public User Author { get; set; }
 
         [ForeignKey("ThreadId")]
-        public Thread Thread { get; set; }
+        public Post Thread { get; set; }
 
         [ForeignKey("ResponseToCommentId")]
         public Comment ResponseToComment { get; set; }

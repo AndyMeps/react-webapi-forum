@@ -2,7 +2,7 @@
 
 namespace Mepham.Forum.Services.Contracts
 {
-    public interface IThreadService : IBaseService<Thread>
+    public interface IPostService : IBaseService<Post>
     {
     }
 }

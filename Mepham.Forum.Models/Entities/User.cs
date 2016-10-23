@@ -17,7 +17,7 @@ namespace Mepham.Forum.Models.Entities
 
         public virtual ICollection<Topic> ModeratingTopics { get; set; }
 
-        public virtual ICollection<Thread> AuthoredTopics { get; set; }
+        public virtual ICollection<Post> AuthoredTopics { get; set; }
 
         #endregion
     }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Mepham.Forum.Models.Dtos.Thread
+namespace Mepham.Forum.Models.Dtos.Post
 {
-    public class BasicThreadDto
+    public class BasicPostDto
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

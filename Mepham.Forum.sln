@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Services", "Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.DataAccess", "Mepham.Forum.DataAccess\Mepham.Forum.DataAccess.csproj", "{707D89E3-88CC-48EF-A3FF-75788CBEB758}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mepham.Forum.Web", "Mepham.Forum.Web\Mepham.Forum.Web.csproj", "{9757AED2-041F-499E-9E27-669EBBBD2CC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707D89E3-88CC-48EF-A3FF-75788CBEB758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9757AED2-041F-499E-9E27-669EBBBD2CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9757AED2-041F-499E-9E27-669EBBBD2CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9757AED2-041F-499E-9E27-669EBBBD2CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9757AED2-041F-499E-9E27-669EBBBD2CC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

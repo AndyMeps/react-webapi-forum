@@ -42,14 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\Comment\BasicCommentDto.cs" />
-    <Compile Include="Dtos\Thread\BasicThreadDto.cs" />
+    <Compile Include="Dtos\Post\BasicPostDto.cs" />
     <Compile Include="Dtos\Topic\BasicTopicDto.cs" />
     <Compile Include="Dtos\User\BasicUserDto.cs" />
     <Compile Include="Dtos\User\CreateUserDto.cs" />
     <Compile Include="Dtos\User\UpdateUserDto.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\Thread.cs" />
+    <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

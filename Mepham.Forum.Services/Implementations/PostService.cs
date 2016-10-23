@@ -4,8 +4,8 @@ using Mepham.Forum.Services.Contracts;
 
 namespace Mepham.Forum.Services.Implementations
 {
-    public class ThreadService : BaseService<Thread>, IThreadService
+    public class PostService : BaseService<Post>, IPostService
     {
-        public ThreadService(IForumContext context) : base(context) { }
+        public PostService(IForumContext context) : base(context) { }
     }
 }
