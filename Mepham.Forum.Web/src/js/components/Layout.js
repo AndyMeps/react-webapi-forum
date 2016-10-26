@@ -1,15 +1,15 @@
 import React from "react"
 import { connect } from "react-redux"
 
+import Login from './Login';
 
 @connect((store) => {
-    return {};
+    return {
+        auth: store.auth
+    };
 })
 export default class Layout extends React.Component {
     render() {
-        return  <div>
-                    <p>Nothing here yet...</p>
-                    <p>Testing Live Reload</p>
-                </div>;
+        return <div class="container"><Login /></div>;
     }
 }

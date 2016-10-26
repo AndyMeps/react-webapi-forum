@@ -17,6 +17,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.4.5",
+    "react-redux-form": "^1.0.14",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.2.0",
@@ -31,5 +32,10 @@
   },
   "author": "",
   "license": "ISC",
-  "-vs-binding": { "ProjectOpened": [ "install", "dev" ] }
+  "-vs-binding": {
+    "ProjectOpened": [
+      "install",
+      "dev"
+    ]
+  }
 }

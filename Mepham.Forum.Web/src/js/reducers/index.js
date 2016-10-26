@@ -1,9 +1,11 @@
-import { combineReducers } from "redux"
+import { combineReducers } from "redux";
+import { combineForms } from 'react-redux-form';
 
-const reducer = (state = {}, action) => {
-    return state;
-}
+
+import auth from './authReducer';
+import forms from './formsReducer';
 
 export default combineReducers({
-  reducer
+  auth,
+  forms
 })
