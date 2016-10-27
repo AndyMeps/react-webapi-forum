@@ -10,6 +10,11 @@ import Login from './Login';
 })
 export default class Layout extends React.Component {
     render() {
-        return <div class="container"><Login /></div>;
+        if (!this.props.auth.isAuthenticated) {
+            return  (<div class="container">
+                        <Login />
+                    </div>);
+        }
+        return <div class="container">Logged in!</div>;
     }
 }

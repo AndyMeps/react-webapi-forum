@@ -46,6 +46,7 @@
     <Compile Include="Dtos\Topic\BasicTopicDto.cs" />
     <Compile Include="Dtos\User\BasicUserDto.cs" />
     <Compile Include="Dtos\User\CreateUserDto.cs" />
+    <Compile Include="Dtos\User\LoginUserDto.cs" />
     <Compile Include="Dtos\User\UpdateUserDto.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Comment.cs" />

@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using Newtonsoft.Json.Serialization;
 
 namespace Mepham.Forum.Api
@@ -13,6 +14,9 @@ namespace Mepham.Forum.Api
             var jsonFormatter = config.Formatters.JsonFormatter;
             jsonFormatter.UseDataContractJsonSerializer = false;
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

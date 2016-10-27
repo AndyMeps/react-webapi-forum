@@ -9,7 +9,7 @@ import * as authActions from '../actions/authActions';
 })
 class Login extends React.Component {
     handleSubmit(u) {
-        this.props.dispatch(authActions.fetchUser(u.username, u.password));
+        this.props.dispatch(authActions.loginUser(u.username, u.password));
     }
 
     render() {

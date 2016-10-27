@@ -1,17 +1,22 @@
 import axios from "axios";
 
-export function fetchUser(username, password) {
+export function loginUser(username, password) {
     return function(dispatch) {
-        debugger;
-        axios.post("http://localhost:8080/api/auth/", {
+        axios.post("http://localhost:54499/api/auth/login", {
             username,
             password
         })
         .then((response) => {
-            dispatch({type: "FETCH_USER_FULFILLED", payload: response.data})
+            dispatch({type: "LOGIN_USER_FULFILLED", payload: response.data});
         })
         .catch((err) => {
-            dispatch({type: "FETCH_USER_REJECTED", payload: err})
+            dispatch({type: "LOGIN_USER_REJECTED", payload: err});
         });
+    }
+}
+
+export function logoutUser() {
+    return function(dispatch) {
+        // TODO
     }
 }

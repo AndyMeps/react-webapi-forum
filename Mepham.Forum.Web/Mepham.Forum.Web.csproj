@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="src\js\actions\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -55,14 +54,22 @@
   <ItemGroup>
     <Content Include="src\client.min.js" />
     <Content Include="src\index.html" />
+    <Content Include="src\js\actions\authActions.js" />
     <Content Include="src\js\client.js" />
     <Content Include="src\js\components\Layout.js" />
+    <Content Include="src\js\components\Login.js" />
+    <Content Include="src\js\reducers\authReducer.js" />
+    <Content Include="src\js\reducers\formsReducer.js" />
     <Content Include="src\js\reducers\index.js" />
     <Content Include="src\js\store.js" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jsconfig.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
