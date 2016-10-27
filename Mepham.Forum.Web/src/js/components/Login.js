@@ -12,6 +12,10 @@ class Login extends React.Component {
         this.props.dispatch(authActions.loginUser(u.username, u.password));
     }
 
+    errorMessage() {
+        return (this.props.auth.error != null) ? <p class="text-danger">{this.props.auth.error.message}</p> : null;
+    }
+
     render() {
         return (
             <div class="login-container">
@@ -21,6 +25,8 @@ class Login extends React.Component {
                     <Control type="password" model="forms.login.password" class="form-control" placeholder="Enter Password" />
                     <button class="btn btn-default">Submit</button>
                 </Form>
+
+                {this.errorMessage()}
             </div>
         );
     }

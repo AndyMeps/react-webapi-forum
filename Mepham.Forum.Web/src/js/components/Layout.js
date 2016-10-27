@@ -1,20 +1,19 @@
 import React from "react"
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import { Link } from 'react-router';
 
 import Login from './Login';
 
-@connect((store) => {
-    return {
-        auth: store.auth
-    };
-})
 export default class Layout extends React.Component {
     render() {
-        if (!this.props.auth.isAuthenticated) {
-            return  (<div class="container">
-                        <Login />
-                    </div>);
-        }
-        return <div class="container">Logged in!</div>;
+        return (
+            <div class="container">
+                <header>
+                    Links: { ' ' } <Link to="/">Home</Link>
+                    { ' ' }
+                    <Link to="/login">Login</Link>
+                </header>
+                {this.props.children}
+            </div>);
     }
 }
