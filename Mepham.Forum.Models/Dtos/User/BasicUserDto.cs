@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mepham.Forum.Models.Dtos.Topic;
+using System;
+using System.Collections.Generic;
 
 namespace Mepham.Forum.Models.Dtos.User
 {

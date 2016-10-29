@@ -42,10 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\Comment\BasicCommentDto.cs" />
+    <Compile Include="Dtos\Comment\CreateCommentDto.cs" />
     <Compile Include="Dtos\Post\BasicPostDto.cs" />
+    <Compile Include="Dtos\Post\CreatePostDto.cs" />
+    <Compile Include="Dtos\Post\DetailedPostDto.cs" />
     <Compile Include="Dtos\Topic\BasicTopicDto.cs" />
+    <Compile Include="Dtos\Topic\CreateTopicDto.cs" />
+    <Compile Include="Dtos\Topic\DetailedTopicDto.cs" />
     <Compile Include="Dtos\User\BasicUserDto.cs" />
     <Compile Include="Dtos\User\CreateUserDto.cs" />
+    <Compile Include="Dtos\User\DetailUserDto.cs" />
     <Compile Include="Dtos\User\LoginUserDto.cs" />
     <Compile Include="Dtos\User\UpdateUserDto.cs" />
     <Compile Include="Entities\BaseEntity.cs" />

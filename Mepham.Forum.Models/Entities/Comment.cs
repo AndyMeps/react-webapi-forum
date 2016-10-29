@@ -13,7 +13,7 @@ namespace Mepham.Forum.Models.Entities
         public Guid AuthorId { get; set; }
 
         [Required]
-        public Guid ThreadId { get; set; }
+        public Guid PostId { get; set; }
 
         public Guid? ResponseToCommentId { get; set; }
 
@@ -22,8 +22,8 @@ namespace Mepham.Forum.Models.Entities
         [ForeignKey("AuthorId")]
         public User Author { get; set; }
 
-        [ForeignKey("ThreadId")]
-        public Post Thread { get; set; }
+        [ForeignKey("PostId")]
+        public Post Post { get; set; }
 
         [ForeignKey("ResponseToCommentId")]
         public Comment ResponseToComment { get; set; }

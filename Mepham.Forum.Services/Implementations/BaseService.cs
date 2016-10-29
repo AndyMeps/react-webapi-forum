@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Mepham.Forum.DataAccess.Contracts;
+using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.Services.Implementations
 {
@@ -12,7 +13,7 @@ namespace Mepham.Forum.Services.Implementations
     /// Boilerplate repository that handles the majority of the needs of every Entity repository.
     /// </summary>
     /// <typeparam name="TObject">POCO from Mepham.Forum.Models</typeparam>
-    public class BaseService<TObject> where TObject : class
+    public class BaseService<TObject> where TObject : BaseEntity
     {
         protected IForumContext Context;
 
@@ -36,9 +37,19 @@ namespace Mepham.Forum.Services.Implementations
             return Context.Set<TObject>().Find(id);
         }
 
+        public TObject Get(string id)
+        {
+            return Get(new Guid(id));
+        }
+
         public async Task<TObject> GetAsync(Guid id)
         {
             return await Context.Set<TObject>().FindAsync(id);
+        }
+
+        public async Task<TObject> GetAsync(string id)
+        {
+            return await GetAsync(new Guid(id));
         }
 
         public TObject Find(Expression<Func<TObject, bool>> match)
@@ -65,14 +76,18 @@ namespace Mepham.Forum.Services.Implementations
         {
             Context.Set<TObject>().Add(t);
             Context.SaveChanges();
-            return t;
+
+            var newObj = Context.Set<TObject>().Find(t.Id);
+            return newObj;
         }
 
         public async Task<TObject> AddAsync(TObject t)
         {
             Context.Set<TObject>().Add(t);
             await Context.SaveChangesAsync();
-            return t;
+
+            var newObj = Context.Set<TObject>().Find(t.Id);
+            return newObj;
         }
 
         public TObject Update(TObject updated, Guid key)

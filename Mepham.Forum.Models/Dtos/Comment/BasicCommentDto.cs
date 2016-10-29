@@ -6,8 +6,6 @@ namespace Mepham.Forum.Models.Dtos.Comment
     {
         public Guid Id { get; set; }
         public string Description { get; set; }
-        public Guid AuthorId { get; set; }
-        public Guid ThreadId { get; set; }
         public Guid? ResponseToCommentId { get; set; }
     }
 }
