@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import moment from 'moment';
 
+import AddComment from './AddComment';
+
 import * as postActions from '../actions/postActions';
 
 @connect((store) => {
@@ -17,6 +19,18 @@ export default class Topic extends React.Component {
         this.props.dispatch(postActions.fetchPostComments(this.props.params.postId));
     }
 
+    handleAddCommentToggle() {
+        this.props.dispatch(postActions.toggleAddComment());
+    }
+    
+    renderNavigation() {
+        if (this.props.post.currentPost == null) return null;
+
+        return (
+            <Link to={`/topic/${this.props.post.currentPost.topic.id}`}>Back</Link>
+        )
+    }
+
     renderPostDetail() {
         let post = this.props.post.currentPost;
 
@@ -26,6 +40,19 @@ export default class Topic extends React.Component {
             <h3>{post.title} <small>posted by {post.author.username}</small></h3>
             <p>{post.description}</p>
         </div>);
+    }
+
+    renderAddCommentButton() {
+        return <a class="btn btn-primary btn-xs" onClick={() => this.handleAddCommentToggle()}>
+        { (this.props.post.isAddingComment) ? 'Cancel' : 'Create Comment'}</a>
+    }
+
+    renderAddComment() {
+        if (!this.props.post.isAddingComment) return null;
+
+        return (
+            <AddComment></AddComment>
+        )
     }
 
     renderComments() {
@@ -41,9 +68,10 @@ export default class Topic extends React.Component {
     }
 
     renderComment(comment) {
-        let formattedDate = moment(comment.createDateTime).format('DD MMM YYYY');
+        let formattedDate = moment(comment.createDateTime).format('lll');
         return (
             <div class="comment" key={comment.id}>
+                <h4>{comment.author.username} says:</h4>
                 <div>{comment.description} - {formattedDate}</div>
                 {
                     comment.replies.map((reply) => {
@@ -57,7 +85,10 @@ export default class Topic extends React.Component {
     render() {
         return (
             <div class="post-container">
+                {this.renderNavigation()}
                 {this.renderPostDetail()}
+                {this.renderAddCommentButton()}
+                {this.renderAddComment()}
                 <div class="comments-container">{this.renderComments()}</div>
             </div>
         );

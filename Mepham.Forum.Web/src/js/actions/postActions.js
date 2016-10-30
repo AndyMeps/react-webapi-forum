@@ -25,3 +25,26 @@ export function fetchPostComments(id) {
             });
     }
 }
+
+export function toggleAddComment() {
+    return function(dispatch) {
+        dispatch({type: "TOGGLE_ADD_COMMENT"});
+    }
+}
+
+export function addComment(authorId, responseToCommentId, postId, description) {
+    return function(dispatch) {
+        axios.post(environment.apiUrl + '/api/Comments', {
+            description,
+            postId,
+            authorId,
+            responseToCommentId
+        })
+        .then((response) => {
+            dispatch({type: "ADD_COMMENT_FULFILLED", payload: response.data});
+        })
+        .catch((err) => {
+            dispatch({type: "ADD_COMMENT_REJECTED", payload: err});
+        });
+    }
+}
