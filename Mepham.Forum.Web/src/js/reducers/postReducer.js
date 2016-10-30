@@ -2,7 +2,7 @@ export default function reducer(state={
     currentPost: null,
     comments: [],
     error: null,
-    isAdding: false
+    isAddingComment: false
 }, action) {
 
     switch(action.type) {
@@ -31,6 +31,26 @@ export default function reducer(state={
                 comments: action.payload,
                 error: null
             };
+        }
+        case "TOGGLE_ADD_COMMENT": {
+            return {
+                ...state,
+                isAddingComment: !state.isAddingComment
+            }
+        }
+        case "ADD_COMMENT_FULFILLED": {
+            return {
+                ...state,
+                isAddingComment: false,
+                error: null,
+                comments: state.comments.concat(action.payload)
+            }
+        }
+        case "ADD_COMMENT_REJECTED": {
+            return {
+                ...state,
+                error: action.payload
+            }
         }
     }
 

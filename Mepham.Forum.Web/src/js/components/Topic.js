@@ -21,6 +21,12 @@ export default class Topic extends React.Component {
         this.props.dispatch(topicActions.toggleAddPost());
     }
 
+    renderNavigation() {
+        return (
+            <Link to={'/home'}>Back</Link>
+        )
+    }
+
     renderPosts() {
         if (this.props.topics.currentTopic != null) {
         return (
@@ -61,6 +67,7 @@ export default class Topic extends React.Component {
 
     render() {
         return (<div class="topic-container">
+            {this.renderNavigation()}
             {this.renderTopicDetails()}
             {this.renderAddPostButton()}
             {this.renderAddPost()}

@@ -15,8 +15,13 @@ const initialAddPost = {
   description: ''
 };
 
+const initialAddComment = {
+  description: ''
+}
+
 export default combineForms({
     login: initialLogin,
     addTopic: initialAddTopic,
-    addPost: initialAddPost
+    addPost: initialAddPost,
+    addComment: initialAddComment
 }, 'forms');
