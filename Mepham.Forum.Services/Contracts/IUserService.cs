@@ -2,5 +2,7 @@
 
 namespace Mepham.Forum.Services.Contracts
 {
-    public interface IUserService : IBaseService<User> { }
+    public interface IUserService : IBaseService<User> {
+        User FindByUsername(string username);
+    }
 }

@@ -1,4 +1,7 @@
-﻿using Mepham.Forum.Models.Dtos.Topic;
+﻿using AutoMapper;
+using Mepham.Forum.Models.Dtos.Comment;
+using Mepham.Forum.Models.Dtos.Post;
+using Mepham.Forum.Models.Dtos.Topic;
 using Mepham.Forum.Models.Dtos.User;
 using Mepham.Forum.Models.Entities;
 
@@ -12,7 +15,14 @@ namespace Mepham.Forum.Api
             AutoMapper.Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<User, BasicUserDto>();
+                cfg.CreateMap<User, DetailedUserDto>();
                 cfg.CreateMap<Topic, BasicTopicDto>();
+                cfg.CreateMap<Topic, DetailedTopicDto>();
+                cfg.CreateMap<Post, BasicPostDto>();
+                cfg.CreateMap<Post, DetailedPostDto>();
+                cfg.CreateMap<Comment, BasicCommentDto>();
+                    //.ForMember(c => c.Author,
+                    //    opt => opt.MapFrom(c => Mapper.Map<User, BasicUserDto>(c.Author)));
             });
         }
     }

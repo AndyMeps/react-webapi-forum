@@ -6,6 +6,13 @@ namespace Mepham.Forum.Services.Implementations
 {
     public class TopicService : BaseService<Topic>, ITopicService
     {
-        public TopicService(IForumContext context) : base(context) {  }
+        public TopicService(IForumContext context) : base(context) {
+            
+        }
+
+        public Topic FindByTitle(string title)
+        {
+            return Find(t => t.Title == title);
+        }
     }
 }

@@ -6,9 +6,12 @@ using System.Web.Http.Results;
 using AutoMapper;
 using Mepham.Forum.Models.Dtos.User;
 using Mepham.Forum.Services.Contracts;
+using Mepham.Forum.Models.Entities;
+using Mepham.Forum.Api.Helpers;
 
 namespace Mepham.Forum.Api.Controllers
 {
+    [RoutePrefix("api/Auth")]
     public class AuthController : ApiController
     {
         private IUserService _userService;
@@ -19,16 +22,38 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         [HttpPost]
-        [ActionName("Login")]
+        [Route("Login")]
         public IHttpActionResult Login(LoginUserDto model)
         {
-            var foundUser = _userService.Find(u => u.Username == model.Username);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            if (foundUser == null) return BadRequest();
-
-            if (foundUser.Password != model.Password) return StatusCode(HttpStatusCode.Forbidden);
+            var foundUser = _userService.FindByUsername(model.Username);
+            if (foundUser == null) return new NotFoundWithMessageResult("User doesn't exist.");
+            if (foundUser.Password != model.Password) return BadRequest("Password incorrect.");
 
             return Ok(Mapper.Map<BasicUserDto>(foundUser));
+        }
+
+        [HttpPost]
+        [Route("Register")]
+        public IHttpActionResult Register(CreateUserDto model)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            if (_userService.FindByUsername(model.Username) != null)
+                return BadRequest("Username already exists.");
+
+            var user = new User
+            {
+                Id = Guid.NewGuid(),
+                Username = model.Username,
+                Password = model.Password,
+                CreateDateTime = DateTime.Now
+            };
+
+            user = _userService.Add(user);
+
+            return Ok(Mapper.Map<BasicUserDto>(user));
         }
     }
 }

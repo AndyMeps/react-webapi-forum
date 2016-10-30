@@ -10,7 +10,9 @@ namespace Mepham.Forum.Services.Contracts
         ICollection<TObject> GetAll();
         Task<ICollection<TObject>> GetAllAsync();
         TObject Get(Guid id);
+        TObject Get(string id);
         Task<TObject> GetAsync(Guid id);
+        Task<TObject> GetAsync(string id);
         TObject Find(Expression<Func<TObject, bool>> match);
         Task<TObject> FindAsync(Expression<Func<TObject, bool>> match);
         ICollection<TObject> FindAll(Expression<Func<TObject, bool>> match);

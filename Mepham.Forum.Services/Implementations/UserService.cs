@@ -43,5 +43,10 @@ namespace Mepham.Forum.Services.Implementations
             Context.Entry(expected).State = EntityState.Modified;
             return Context.SaveChangesAsync();
         }
+
+        public User FindByUsername(string username)
+        {
+            return Find(u => u.Username == username);
+        }
     }
 }

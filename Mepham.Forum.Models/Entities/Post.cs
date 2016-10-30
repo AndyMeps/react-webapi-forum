@@ -14,14 +14,14 @@ namespace Mepham.Forum.Models.Entities
         public string Description { get; set; }
 
         [Required]
-        public Guid AuthorUserId { get; set; }
+        public Guid AuthorId { get; set; }
 
         [Required]
         public Guid TopicId { get; set; }
 
         #region Navigation Properties
 
-        [ForeignKey("AuthorUserId")]
+        [ForeignKey("AuthorId")]
         public virtual User Author { get; set; }
 
         [ForeignKey("TopicId")]

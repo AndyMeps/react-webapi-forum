@@ -10,6 +10,9 @@ namespace Mepham.Forum.DataAccess
     public class ForumContext : DbContext, IForumContext
     {
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
