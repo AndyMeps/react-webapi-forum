@@ -10,6 +10,9 @@ using System.Net;
 
 namespace Mepham.Forum.Api.Helpers
 {
+    /// <summary>
+    /// Extend IHttpActionResult to allow us to attach a message to a NotFound error code.
+    /// </summary>
     public class NotFoundWithMessageResult : IHttpActionResult
     {
         private string message;

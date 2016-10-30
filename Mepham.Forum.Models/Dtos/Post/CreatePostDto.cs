@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mepham.Forum.Models.Dtos.Post
 {
+    /// <summary>
+    /// Class to be used when creating a Post.
+    /// </summary>
     public class CreatePostDto
     {
         [Required]

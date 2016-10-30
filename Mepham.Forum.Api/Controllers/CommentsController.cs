@@ -9,19 +9,12 @@ using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.Api.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class CommentsController : ApiController
     {
         private readonly ICommentService _commentService;
         private readonly IPostService _postService;
         private readonly IUserService _userService;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="commentService"></param>
         public CommentsController(ICommentService commentService, IPostService postService, IUserService userService)
         {
             _commentService = commentService;
@@ -30,7 +23,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Return a brief description of all Comments.
         /// </summary>
         /// <returns></returns>
         public async Task<ICollection<BasicCommentDto>> GetComments()
@@ -41,7 +34,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Return a Comment by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -52,6 +45,11 @@ namespace Mepham.Forum.Api.Controllers
             return Mapper.Map<BasicCommentDto>(result);
         }
 
+        /// <summary>
+        /// Creates a new Comment on the system.
+        /// </summary>
+        /// <param name="model">The comment to be created.</param>
+        /// <returns>Basic details of the Comment if successful, otherwise a BadRequest with detail.</returns>
         public IHttpActionResult CreateComment(CreateCommentDto model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);

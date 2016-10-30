@@ -11,7 +11,7 @@ namespace Mepham.Forum.DataAccess.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "Mepham.Forum.DataAccess.ForumContext";
 
             // DefaultValue Sql Generator
@@ -36,6 +36,13 @@ namespace Mepham.Forum.DataAccess.Migrations
                         Username = "EmmaReeves",
                         Password = "Testing2!",
                         CreateDateTime = DateTime.Now
+                    },
+                    new User
+                    {
+                        Id = new Guid("83AD0462-3241-4480-B715-21F4F3656298"),
+                        Username = "Test",
+                        Password = "abcd1234",
+                        CreateDateTime = DateTime.Now
                     }
                 );
 
@@ -46,6 +53,14 @@ namespace Mepham.Forum.DataAccess.Migrations
                         Title = "Motorbikes",
                         Description = "Topic for motorbike discussion",
                         ModeratingUserId = new Guid("81AD0462-3241-4480-B715-21F4F3656298"),
+                        CreateDateTime = DateTime.Now
+                    },
+                    new Topic
+                    {
+                        Id = new Guid("E596E5ED-6C68-4D33-9ABE-F11A64CE4679"),
+                        Title = "Craft Beer",
+                        Description = "Topic for craft beer discussion",
+                        ModeratingUserId = new Guid("82AD0462-3241-4480-B715-21F4F3656298"),
                         CreateDateTime = DateTime.Now
                     }
                 );

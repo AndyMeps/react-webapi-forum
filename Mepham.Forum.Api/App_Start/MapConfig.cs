@@ -7,6 +7,10 @@ using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.Api
 {
+    /// <summary>
+    /// This class is used to define the mappings for each Entity to their 
+    /// Data Transfer Object counterparts.
+    /// </summary>
     public static class MapConfig
     {
 

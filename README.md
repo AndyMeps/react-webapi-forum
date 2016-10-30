@@ -2,28 +2,22 @@
 
 Demo site to combine React with ASP.NET Web Api
 
-## Planning
+## Setup
 
-### Technology Considerations
+* React front end uses `webpack-dev-server`, easiest way to run is to install [NPM Task Runner](https://visualstudiogallery.msdn.microsoft.com/8f2f2cbc-4da5-43ba-9de2-c9d08ade4941) 
+and open the solution, NPM Task Runner will install dependencies and start up the webpack server automatically at: [localhost:8080](http://localhost:8080).
+* Create the database and seed with some data by running `Update-Database` from the Package Manager Console.
+* Start the API with the `Mepham.Forum.Api` project, running at: [localhost:54499](http://localhost:54499).
+* Login by registering via the front end or with a user that can be found in the `Configuration.cs` file in `Mepham.Forum.DataAccess/Migrations`.
 
-* ***ASP.NET Web Api (Required)***
-* ***React (Required)***
-* Webpack + Babel
+## Technology Used
+
+* ASP.NET Web Api
+* React
+* Webpack and Babel
 * Redux
 * ES6
-* ~~MS Access or~~ SQL Server ~~(XML?!)~~
-* NUnit or MS Unit Test, Moq
-* Ninject or Autofac
+* Code first SQL Server Database
+* Ninject
 * AutoMapper
-* Entity Framework ~~or Dapper~~
-* ~~JWT or~~ Basic Authentication
-* ESDoc
-
-### Structure
-
-* React front end with Webpack, state maintained with Redux.
-* ASP.NET Web Api, IoC, Services, Models, Testing
-* SQL Database
-
-https://auth0.com/blog/secure-your-react-and-redux-app-with-jwt-authentication/
-http://benfoster.io/blog/aspnet-identity-stripped-bare-mvc-part-1
+* Entity Framework

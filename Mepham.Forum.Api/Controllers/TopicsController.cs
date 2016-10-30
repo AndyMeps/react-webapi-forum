@@ -9,18 +9,11 @@ using Mepham.Forum.Models.Entities;
 
 namespace Mepham.Forum.Api.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class TopicsController : ApiController
     {
         private readonly ITopicService _topicService;
         private readonly IUserService _userService;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="topicsRepository"></param>
         public TopicsController(ITopicService topicService, IUserService userService)
         {
             _topicService = topicService;
@@ -28,7 +21,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns all Topics
         /// </summary>
         /// <returns>Returns all topics.</returns>
         public async Task<ICollection<BasicTopicDto>> GetAllTopics()
@@ -38,7 +31,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns a Topic by Id
         /// </summary>
         /// <param name="id">Guid Id of the Topic to be returned.</param>
         /// <returns></returns>
@@ -48,6 +41,11 @@ namespace Mepham.Forum.Api.Controllers
             return Mapper.Map<DetailedTopicDto>(result);
         }
 
+        /// <summary>
+        /// Creates a Topic using the provided DTO
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Basic Topic details if successful, otherwise a BadRequest with detail.</returns>
         [HttpPost]
         public IHttpActionResult CreateTopic(CreateTopicDto model)
         {

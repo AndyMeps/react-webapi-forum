@@ -5,6 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mepham.Forum.Models.Entities
 {
+    /// <summary>
+    /// A Comment on a Post, users can reply to Comments, which will be referenced 
+    /// with ResponseToCommentId.
+    /// </summary>
     public class Comment : BaseEntity
     {
         [Required]

@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mepham.Forum.Models.Entities
 {
+    /// <summary>
+    /// A Post in a Topic, Users can Comment on Posts.
+    /// </summary>
     public class Post : BaseEntity
     {
         [Required]

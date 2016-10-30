@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mepham.Forum.Models.Dtos.User
 {
+    /// <summary>
+    ///  Class to be used when updating a User.
+    /// </summary>
     public class UpdateUserDto
     {
         [Required]

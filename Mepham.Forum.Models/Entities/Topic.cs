@@ -5,6 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mepham.Forum.Models.Entities
 {
+    /// <summary>
+    /// Represents a section of the Forum, allows for Posts to be grouped in to relevant areas.
+    /// A User will be defined as the Moderator when the Topic is created.
+    /// </summary>
     public class Topic : BaseEntity
     {
         [Required]

@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mepham.Forum.Models.Dtos.Comment
 {
+    /// <summary>
+    /// Class to be used when creating a Comment.
+    /// </summary>
     public class CreateCommentDto
     {
         [Required]

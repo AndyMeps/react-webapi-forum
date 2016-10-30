@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Mepham.Forum.Models.Dtos.Topic
 {
+    /// <summary>
+    /// Class to be used when creating a Topic
+    /// </summary>
     public class CreateTopicDto
     {
         [Required]

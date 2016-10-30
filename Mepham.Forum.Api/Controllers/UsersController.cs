@@ -9,16 +9,10 @@ using Mepham.Forum.Services.Contracts;
 
 namespace Mepham.Forum.Api.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class UsersController : ApiController
     {
         private readonly IUserService _userRepository;
 
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="userRepository"></param>
         public UsersController(IUserService userRepository)
         {
@@ -26,7 +20,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns all Users
         /// </summary>
         /// <returns>Returns all users.</returns>
         public async Task<ICollection<BasicUserDto>> GetAllUsers()
@@ -36,7 +30,7 @@ namespace Mepham.Forum.Api.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns the User by Id
         /// </summary>
         /// <param name="id">Guid Id of the user to be returned.</param>
         /// <returns></returns>

@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace Mepham.Forum.Services.Contracts
 {
+    /// <summary>
+    /// All entities should inherit from this base service to provide boilerplate functionality.
+    /// </summary>
+    /// <typeparam name="TObject"></typeparam>
     public interface IBaseService<TObject> where TObject : class
     {
         ICollection<TObject> GetAll();

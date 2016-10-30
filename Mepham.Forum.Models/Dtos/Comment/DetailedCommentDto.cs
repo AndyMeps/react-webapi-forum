@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Mepham.Forum.Models.Dtos.Comment
 {
+    /// <summary>
+    /// Class to be used when an in-depth Comment is requried, this also returns 
+    /// a recursive in-depth comment for each reply to this comment.
+    /// </summary>
     public class DetailedCommentDto
     {
         public Guid Id { get; set; }

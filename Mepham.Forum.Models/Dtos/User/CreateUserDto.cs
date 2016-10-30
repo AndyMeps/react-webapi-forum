@@ -2,6 +2,9 @@
 
 namespace Mepham.Forum.Models.Dtos.User
 {
+    /// <summary>
+    /// Class to be used when creating a User.
+    /// </summary>
     public class CreateUserDto
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username is a required field.")]

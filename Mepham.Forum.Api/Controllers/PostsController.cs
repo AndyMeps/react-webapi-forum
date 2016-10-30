@@ -26,6 +26,10 @@ namespace Mepham.Forum.Api.Controllers
             _commentService = commentService;
         }
 
+        /// <summary>
+        /// Returns all Posts
+        /// </summary>
+        /// <returns></returns>
         public async Task<ICollection<BasicPostDto>> GetPosts()
         {
             var results = await _postService.GetAllAsync();
@@ -33,6 +37,11 @@ namespace Mepham.Forum.Api.Controllers
             return Mapper.Map<ICollection<BasicPostDto>>(results);
         }
 
+        /// <summary>
+        /// Returns a Post by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<DetailedPostDto> GetPost(string id)
         {
             var result = await _postService.GetAsync(id);
@@ -40,6 +49,11 @@ namespace Mepham.Forum.Api.Controllers
             return Mapper.Map<DetailedPostDto>(result);
         }
 
+        /// <summary>
+        /// Creates a Post using the specified DTO.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Details of the Post if successful, otherwise a BadRequest with Detail.</returns>
         public IHttpActionResult CreatePost(CreatePostDto model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -60,6 +74,11 @@ namespace Mepham.Forum.Api.Controllers
             return Ok(Mapper.Map<BasicPostDto>(post));
         }
 
+        /// <summary>
+        /// Returns all Comments relating to a specified Post.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("api/Posts/{id}/Comments")]
         public IHttpActionResult GetPostComments(string id)
         {

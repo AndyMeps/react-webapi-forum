@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Mepham.Forum.Models.Dtos.Topic
 {
+    /// <summary>
+    /// Class to be used when an in-depth model of a topic is required.
+    /// </summary>
     public class DetailedTopicDto
     {
         public Guid Id { get; set; }

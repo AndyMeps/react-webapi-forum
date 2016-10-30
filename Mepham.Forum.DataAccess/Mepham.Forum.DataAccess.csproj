@@ -51,6 +51,10 @@
   <ItemGroup>
     <Compile Include="ForumContext.cs" />
     <Compile Include="Contracts\IForumContext.cs" />
+    <Compile Include="Migrations\201610301701582_InitialMigration.cs" />
+    <Compile Include="Migrations\201610301701582_InitialMigration.Designer.cs">
+      <DependentUpon>201610301701582_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\DefaultValueSqlServerMigrationSqlGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,7 +73,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610301701582_InitialMigration.resx">
+      <DependentUpon>201610301701582_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

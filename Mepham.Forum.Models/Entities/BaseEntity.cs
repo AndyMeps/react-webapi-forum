@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mepham.Forum.Models.Entities
 {
+    /// <summary>
+    /// Provides some core properties that most-of if not all Entities will require.
+    /// </summary>
     public abstract class BaseEntity
     {
         [Key]

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Mepham.Forum.Models.Dtos.User
 {
+    /// <summary>
+    /// Class to be used when an in-depth look at a User is required.
+    /// </summary>
     public class DetailedUserDto
     {
         public Guid Id { get; set; }
