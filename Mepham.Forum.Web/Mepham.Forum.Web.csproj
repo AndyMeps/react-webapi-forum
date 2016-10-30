@@ -55,12 +55,24 @@
     <Content Include="src\client.min.js" />
     <Content Include="src\index.html" />
     <Content Include="src\js\actions\authActions.js" />
+    <Content Include="src\js\actions\postActions.js" />
+    <Content Include="src\js\actions\topicActions.js" />
     <Content Include="src\js\client.js" />
+    <Content Include="src\js\components\AddComment.js" />
+    <Content Include="src\js\components\AddPost.js" />
+    <Content Include="src\js\components\AddTopic.js" />
+    <Content Include="src\js\components\Home.js" />
     <Content Include="src\js\components\Layout.js" />
     <Content Include="src\js\components\Login.js" />
+    <Content Include="src\js\components\Post.js" />
+    <Content Include="src\js\components\Topic.js" />
+    <Content Include="src\js\env.js" />
+    <Content Include="src\js\helpers\validation.js" />
     <Content Include="src\js\reducers\authReducer.js" />
     <Content Include="src\js\reducers\formsReducer.js" />
     <Content Include="src\js\reducers\index.js" />
+    <Content Include="src\js\reducers\postReducer.js" />
+    <Content Include="src\js\reducers\topicReducer.js" />
     <Content Include="src\js\store.js" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
