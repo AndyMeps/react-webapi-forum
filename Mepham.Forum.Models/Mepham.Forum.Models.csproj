@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Dtos\Comment\BasicCommentDto.cs" />
     <Compile Include="Dtos\Comment\CreateCommentDto.cs" />
+    <Compile Include="Dtos\Comment\DetailedCommentDto.cs" />
     <Compile Include="Dtos\Post\BasicPostDto.cs" />
     <Compile Include="Dtos\Post\CreatePostDto.cs" />
     <Compile Include="Dtos\Post\DetailedPostDto.cs" />

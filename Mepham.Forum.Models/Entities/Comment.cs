@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,13 +21,15 @@ namespace Mepham.Forum.Models.Entities
         #region Navigation Properties
 
         [ForeignKey("AuthorId")]
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         [ForeignKey("PostId")]
-        public Post Post { get; set; }
+        public virtual Post Post { get; set; }
 
         [ForeignKey("ResponseToCommentId")]
         public Comment ResponseToComment { get; set; }
+
+        public virtual ICollection<Comment> Replies { get; set; }
 
         #endregion
     }

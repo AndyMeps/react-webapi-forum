@@ -21,8 +21,7 @@ namespace Mepham.Forum.Api
                 cfg.CreateMap<Post, BasicPostDto>();
                 cfg.CreateMap<Post, DetailedPostDto>();
                 cfg.CreateMap<Comment, BasicCommentDto>();
-                    //.ForMember(c => c.Author,
-                    //    opt => opt.MapFrom(c => Mapper.Map<User, BasicUserDto>(c.Author)));
+                cfg.CreateMap<Comment, DetailedCommentDto>();
             });
         }
     }

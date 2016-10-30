@@ -6,6 +6,8 @@ using AutoMapper;
 using Mepham.Forum.Models.Dtos.Post;
 using Mepham.Forum.Services.Contracts;
 using Mepham.Forum.Models.Entities;
+using System.Linq;
+using Mepham.Forum.Models.Dtos.Comment;
 
 namespace Mepham.Forum.Api.Controllers
 {
@@ -14,12 +16,14 @@ namespace Mepham.Forum.Api.Controllers
         private readonly IPostService _postService;
         private readonly IUserService _userService;
         private readonly ITopicService _topicService;
+        private readonly ICommentService _commentService;
 
-        public PostsController(IPostService threadService, IUserService userService, ITopicService topicService)
+        public PostsController(IPostService threadService, IUserService userService, ITopicService topicService, ICommentService commentService)
         {
             _postService = threadService;
             _userService = userService;
             _topicService = topicService;
+            _commentService = commentService;
         }
 
         public async Task<ICollection<BasicPostDto>> GetPosts()
@@ -31,7 +35,7 @@ namespace Mepham.Forum.Api.Controllers
 
         public async Task<DetailedPostDto> GetPost(string id)
         {
-            var result = await _postService.GetAsync(new Guid(id));
+            var result = await _postService.GetAsync(id);
 
             return Mapper.Map<DetailedPostDto>(result);
         }
@@ -54,6 +58,14 @@ namespace Mepham.Forum.Api.Controllers
             });
 
             return Ok(Mapper.Map<BasicPostDto>(post));
+        }
+
+        [Route("api/Posts/{id}/Comments")]
+        public IHttpActionResult GetPostComments(string id)
+        {
+            var result = _commentService.GetByPostId(id).Where(c => c.ResponseToCommentId == null);
+
+            return Ok(Mapper.Map<ICollection<DetailedCommentDto>>(result));
         }
     }
 }
