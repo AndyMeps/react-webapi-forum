@@ -25,6 +25,17 @@ export default function reducer(state={
                 error: null
             }
         }
+        case "LOGOUT_USER": {
+            return {
+                ...state,
+                user: {
+                    id: null,
+                    username: null
+                },
+                isAuthenticated: false,
+                error: null
+            }
+        }
     }
 
     return state;

@@ -1,9 +1,10 @@
 import axios from "axios";
 import { push } from 'react-router-redux'
+import { environment } from '../env'
 
 export function loginUser(username, password) {
     return function(dispatch) {
-        axios.post("http://localhost:54499/api/auth/login", {
+        axios.post(environment.apiUrl + "/api/auth/login", {
             username,
             password
         })
@@ -19,6 +20,7 @@ export function loginUser(username, password) {
 
 export function logoutUser() {
     return function(dispatch) {
-        // TODO
+        dispatch({type: "LOGOUT_USER"})
+        dispatch(push('/'))
     }
 }
