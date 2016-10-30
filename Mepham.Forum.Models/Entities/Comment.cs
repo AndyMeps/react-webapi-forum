@@ -31,7 +31,7 @@ namespace Mepham.Forum.Models.Entities
         public virtual Post Post { get; set; }
 
         [ForeignKey("ResponseToCommentId")]
-        public Comment ResponseToComment { get; set; }
+        public virtual Comment ResponseToComment { get; set; }
 
         public virtual ICollection<Comment> Replies { get; set; }
 

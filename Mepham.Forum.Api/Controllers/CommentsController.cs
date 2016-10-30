@@ -68,7 +68,12 @@ namespace Mepham.Forum.Api.Controllers
                     CreateDateTime = DateTime.Now
                 });
 
-                return Ok(Mapper.Map<BasicCommentDto>(comment));
+                if(comment.Author == null)
+                {
+                    comment.Author = _userService.Get(comment.AuthorId);
+                }
+
+                return Ok(Mapper.Map<DetailedCommentDto>(comment));
             }
             catch (Exception ex)
             {
