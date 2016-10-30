@@ -5,6 +5,18 @@ const initialLogin = {
   password: ''
 };
 
+const initialAddTopic = {
+  title: '',
+  description: ''
+};
+
+const initialAddPost = {
+  title: '',
+  description: ''
+};
+
 export default combineForms({
-    login: initialLogin
+    login: initialLogin,
+    addTopic: initialAddTopic,
+    addPost: initialAddPost
 }, 'forms');

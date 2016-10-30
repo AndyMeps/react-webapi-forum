@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Control, Form } from 'react-redux-form';
+import * as validation from '../helpers/validation';
 
 import * as authActions from '../actions/authActions';
 
@@ -13,7 +14,15 @@ class Login extends React.Component {
     }
 
     errorMessage() {
-        return (this.props.auth.error != null) ? <p class="text-danger">{this.props.auth.error.message}</p> : null;
+        if (this.props.auth.error == null) return null;
+
+        var errorDetails = this.props.auth.error.data;
+        return (
+            <div class="error-container">
+                <p class="text-danger">{this.props.auth.error.data.message}</p>
+                {validation.renderValidationErrors(errorDetails.modelState)}
+            </div>
+        );
     }
 
     render() {
