@@ -9,10 +9,25 @@ import * as topicActions from '../actions/topicActions';
     return { auth: store.auth, topics: store.topics }
 })
 class AddPost extends React.Component {
+
+    /**
+     * Called when the 'Add Post' button is clicked.
+     *
+     * @param {any} p Represents the addPost form state.
+     *
+     * @memberOf AddPost
+     */
     handleSubmit(p) {
         this.props.dispatch(topicActions.createPost(this.props.auth.user.id, this.props.topics.currentTopic.id, p.title, p.description));
     }
 
+    /**
+     * Render error message section, will render nothing if no error message state.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddPost
+     */
     errorMessage() {
         if (this.props.topics.error == null) return null;
 
@@ -26,6 +41,13 @@ class AddPost extends React.Component {
         )
     }
 
+    /**
+     * Render the Add Post form.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddPost
+     */
     render() {
         return (
             <div class="add-post-container">

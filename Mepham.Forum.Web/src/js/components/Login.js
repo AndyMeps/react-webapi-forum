@@ -9,10 +9,25 @@ import * as authActions from '../actions/authActions';
     return { auth: store.auth }
 })
 class Login extends React.Component {
+
+    /**
+     * Called when the 'Submit' button is clicked.
+     *
+     * @param {any} Representation of the login form state.
+     *
+     * @memberOf Login
+     */
     handleSubmit(u) {
         this.props.dispatch(authActions.loginUser(u.username, u.password));
     }
 
+    /**
+     * Render error message section, will render nothing if no error message state.
+     *
+     * @returns JSX
+     *
+     * @memberOf Login
+     */
     errorMessage() {
         if (this.props.auth.error == null) return null;
 
@@ -25,6 +40,13 @@ class Login extends React.Component {
         );
     }
 
+    /**
+     * Renders the Login form.
+     *
+     * @returns JSX
+     *
+     * @memberOf Login
+     */
     render() {
         return (
             <div class="login-container">
@@ -39,6 +61,6 @@ class Login extends React.Component {
             </div>
         );
     }
-} 
+}
 
 export default Login;

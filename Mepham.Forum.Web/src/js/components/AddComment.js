@@ -10,10 +10,24 @@ import * as postActions from '../actions/postActions';
 })
 class AddComment extends React.Component {
 
+    /**
+     * Called when the 'Add Comment' button is clicked.
+     *
+     * @param {any} c Represents the addComment form state.
+     *
+     * @memberOf AddComment
+     */
     handleSubmit(c) {
         this.props.dispatch(postActions.addComment(this.props.auth.user.id, null, this.props.post.currentPost.id, c.description));
     }
 
+    /**
+     * Render error message section, will render nothing if no error message state.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddComment
+     */
     errorMessage() {
         if (this.props.post.error == null) return null;
 
@@ -27,6 +41,13 @@ class AddComment extends React.Component {
         )
     }
 
+    /**
+     * Render the Add Comment form.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddComment
+     */
     render() {
         return (
             <div class="add-comment-container">

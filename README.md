@@ -8,7 +8,7 @@ Demo site to combine React with ASP.NET Web Api
 and open the solution, NPM Task Runner will install dependencies and start up the webpack server automatically at: [localhost:8080](http://localhost:8080).
 * Create the database and seed with some data by running `Update-Database` from the Package Manager Console.
 * Start the API with the `Mepham.Forum.Api` project, running at: [localhost:54499](http://localhost:54499).
-* Login by registering via the front end or with a user that can be found in the `Configuration.cs` file in `Mepham.Forum.DataAccess/Migrations`.
+* Login with a user that can be found in the `Configuration.cs` file in `Mepham.Forum.DataAccess/Migrations`.
 
 ## Technology Used
 

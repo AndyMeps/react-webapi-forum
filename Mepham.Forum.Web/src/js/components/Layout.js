@@ -12,6 +12,14 @@ import * as authActions from '../actions/authActions';
     }
 })
 export default class Layout extends React.Component {
+
+    /**
+     * Renders the top navigation allowing the User to log out when isAuthenticated == true
+     *
+     * @returns JSX
+     *
+     * @memberOf Layout
+     */
     renderNavigation() {
         if (this.props.auth.isAuthenticated) {
             return (<nav class="navbar navbar-default">
@@ -25,10 +33,23 @@ export default class Layout extends React.Component {
         return null;
     }
 
+    /**
+     * Called when the 'Log Out' link is clicked.
+     *
+     *
+     * @memberOf Layout
+     */
     handleLogout() {
         this.props.dispatch(authActions.logoutUser());
     }
 
+    /**
+     * Combines page elements.
+     *
+     * @returns JSX
+     *
+     * @memberOf Layout
+     */
     render() {
         return (
             <div class="container">

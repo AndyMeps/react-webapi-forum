@@ -13,14 +13,33 @@ import * as topicActions from '../actions/topicActions';
 })
 export default class Home extends React.Component {
 
+    /**
+     * Lifecycle handler.
+     *
+     *
+     * @memberOf Home
+     */
     componentDidMount() {
         this.props.dispatch(topicActions.fetchTopics());
     }
 
+    /**
+     * Called when the 'Add Topic' button is clicked - Show and Hide
+     *
+     *
+     * @memberOf Home
+     */
     handleAddToggle() {
         this.props.dispatch(topicActions.toggleAddTopic());
     }
 
+    /**
+     * Enumerate over each topic and display as a list.
+     *
+     * @returns JSX
+     *
+     * @memberOf Home
+     */
     renderTopics() {
         return (
             <ul class="topics-container">
@@ -37,11 +56,25 @@ export default class Home extends React.Component {
         );
     }
 
+    /**
+     * Renders the 'Add Topic' button, will display a 'Cancel' button when isAddingTopic == true
+     *
+     * @returns JSX
+     *
+     * @memberOf Home
+     */
     renderAddTopicButton() {
         return <a class="btn btn-primary btn-xs" onClick={() => this.handleAddToggle()}>
         { (this.props.topics.isAddingTopic) ? 'Cancel' : 'Create Topic' }</a>
     }
 
+    /**
+     * Renders the AddTopic component if isAddingTopic == true.
+     *
+     * @returns JSX
+     *
+     * @memberOf Home
+     */
     renderAddTopic() {
         if (!this.props.topics.isAddingTopic) return null;
 
@@ -50,6 +83,13 @@ export default class Home extends React.Component {
         )
     }
 
+    /**
+     * Combines all rendered page elements.
+     *
+     * @returns JSX
+     *
+     * @memberOf Home
+     */
     render() {
         return (
             <div class="home-container">

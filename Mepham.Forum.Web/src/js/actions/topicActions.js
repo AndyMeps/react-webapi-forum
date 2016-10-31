@@ -2,6 +2,12 @@ import axios from 'axios';
 import { push } from 'react-router-redux';
 import { environment } from '../env';
 
+/**
+ * Attempts to return all Topics.
+ *
+ * @export
+ * @returns
+ */
 export function fetchTopics() {
     return function(dispatch) {
         axios.get(environment.apiUrl + '/api/Topics')
@@ -14,6 +20,13 @@ export function fetchTopics() {
     }
 }
 
+/**
+ * Attempts to return details of a Topic with the specified ID.
+ *
+ * @export
+ * @param {string} id GUID of the Topic to be queried.
+ * @returns
+ */
 export function fetchTopicDetails(id) {
     return function(dispatch) {
         axios.get(environment.apiUrl + `/api/Topics/${id}`)
@@ -26,18 +39,39 @@ export function fetchTopicDetails(id) {
     }
 }
 
+/**
+ * Toggles the state of the Add Topic functionality.
+ *
+ * @export
+ * @returns
+ */
 export function toggleAddTopic() {
     return function(dispatch) {
         dispatch({type: "TOGGLE_ADD_TOPIC"});
     }
 }
 
+/**
+ * Toggles the state of the Add Post functionality.
+ *
+ * @export
+ * @returns
+ */
 export function toggleAddPost() {
     return function(dispatch) {
         dispatch({type: "TOGGLE_ADD_POST"});
     }
 }
 
+/**
+ * Attempts to create a new Topic.
+ *
+ * @export
+ * @param {string} moderatingUserId GUID of the current User.
+ * @param {string} title Title of the new Topic.
+ * @param {string} description Description of the new Topic.
+ * @returns
+ */
 export function createTopic(moderatingUserId, title, description) {
     return function(dispatch) {
         axios.post(environment.apiUrl + '/api/Topics', {
@@ -54,6 +88,16 @@ export function createTopic(moderatingUserId, title, description) {
     }
 }
 
+/**
+ * Attempts to create a new Post.
+ *
+ * @export
+ * @param {string} authorId GUID of the current User.
+ * @param {string} topicId GUID of the current topic.
+ * @param {string} title Title of the Post.
+ * @param {string} description Description of the Post.
+ * @returns
+ */
 export function createPost(authorId, topicId, title, description) {
     return function(dispatch) {
         axios.post(environment.apiUrl + '/api/Posts', {

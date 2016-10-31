@@ -10,10 +10,24 @@ import * as topicActions from '../actions/topicActions';
 })
 class AddTopic extends React.Component {
 
+    /**
+     * Called when the 'Add Topic' button is clicked.
+     *
+     * @param {any} t Representation of the addTopic form state.
+     *
+     * @memberOf AddTopic
+     */
     handleSubmit(t) {
         this.props.dispatch(topicActions.createTopic(this.props.auth.user.id, t.title, t.description));
     }
 
+    /**
+     * Render error message section, will render nothing if no error message state.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddTopic
+     */
     errorMessage() {
         if (this.props.topics.error == null) return null;
 
@@ -27,6 +41,13 @@ class AddTopic extends React.Component {
         )
     }
 
+    /**
+     * Renders the Add Topic form.
+     *
+     * @returns JSX
+     *
+     * @memberOf AddTopic
+     */
     render() {
         return (
             <div class="add-topic-container">

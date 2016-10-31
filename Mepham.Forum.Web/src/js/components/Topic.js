@@ -13,20 +13,46 @@ import * as topicActions from '../actions/topicActions';
     };
 })
 export default class Topic extends React.Component {
+
+    /**
+     * Lifecycle hook.
+     *
+     * @memberOf Topic
+     */
     componentDidMount() {
         this.props.dispatch(topicActions.fetchTopicDetails(this.props.params.topicId));
     }
 
+    /**
+     * Called when the 'Add Topic'/'Cancel' button is clicked.
+     *
+     *
+     * @memberOf Topic
+     */
     handleAddToggle() {
         this.props.dispatch(topicActions.toggleAddPost());
     }
 
+    /**
+     * Renders a Back button when the state is loaded.
+     *
+     * @returns
+     *
+     * @memberOf Topic
+     */
     renderNavigation() {
         return (
             <Link to={'/home'}>Back</Link>
         )
     }
 
+    /**
+     * Enumerates of the current Topic's Posts.
+     *
+     * @returns JSX
+     *
+     * @memberOf Topic
+     */
     renderPosts() {
         if (this.props.topics.currentTopic != null) {
         return (
@@ -42,11 +68,25 @@ export default class Topic extends React.Component {
         return;
     }
 
+    /**
+     * Renders an 'Add Post' button, will render a 'Cancel' button when isAddingPost == true.
+     *
+     * @returns
+     *
+     * @memberOf Topic
+     */
     renderAddPostButton() {
         return <a class="btn btn-primary btn-xs" onClick={() => this.handleAddToggle()}>
         { (this.props.topics.isAddingPost) ? 'Cancel' : 'Create Post' }</a>
     }
 
+    /**
+     * Renders the AddPost component.
+     *
+     * @returns JSX
+     *
+     * @memberOf Topic
+     */
     renderAddPost() {
         if (!this.props.topics.isAddingPost) return null;
 
@@ -55,6 +95,13 @@ export default class Topic extends React.Component {
         )
     }
 
+    /**
+     * Renders details pertaining to the current Topic.
+     *
+     * @returns JSX
+     *
+     * @memberOf Topic
+     */
     renderTopicDetails() {
         if (this.props.topics.currentTopic != null) {
             return (<div class="topic-detail-container well">
@@ -65,6 +112,13 @@ export default class Topic extends React.Component {
         }
     }
 
+    /**
+     * Combines and renders the Topic page.
+     *
+     * @returns
+     *
+     * @memberOf Topic
+     */
     render() {
         return (<div class="topic-container">
             {this.renderNavigation()}
